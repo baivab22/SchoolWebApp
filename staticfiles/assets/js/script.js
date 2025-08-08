@@ -1,13 +1,16 @@
 // sticky navbar
-document.addEventListener('DOMContentLoaded', () => {
-  const navSticky = document.querySelector('.nav_bar');
 
-  window.addEventListener('scroll', function () {
-    navSticky.classList.toggle('sticky', window.scrollY > 0);
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".navigation_section");
+
+  const navSticky = document.querySelector(".nav_bar");
+
+  window.addEventListener("scroll", function () {
+    navSticky.classList.toggle("sticky", window.scrollY > 0);
   });
-})
+});
 
-// navmenu 
+// navmenu
 // document.addEventListener('DOMContentLoaded', () => {
 //   const menuItems = document.querySelectorAll('.items_list');
 
@@ -22,18 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
 //   });
 // });
 
-
 // header-slider images
-document.addEventListener('DOMContentLoaded', () => {
-  const sliderItems = document.querySelectorAll('.mySwiper .swiper-slide')
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".navigation_section");
 
-  sliderItems.forEach(sliderItem => {
-    sliderItem.addEventListener('click', () => {
-      document.querySelector('.active_slider')?.classList.remove('active_slider')
-      sliderItem.classList.add('active_slider')
-    })
-  })
-})
+  const sliderItems = document.querySelectorAll(".mySwiper .swiper-slide");
+
+  sliderItems.forEach((sliderItem) => {
+    sliderItem.addEventListener("click", () => {
+      document
+        .querySelector(".active_slider")
+        ?.classList.remove("active_slider");
+      sliderItem.classList.add("active_slider");
+    });
+  });
+});
 
 // slider
 var swiper = new Swiper(".mySwiper", {
@@ -92,18 +98,18 @@ var swiper2 = new Swiper(".testimonial_swiper2", {
   },
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const hamMenu = document.querySelector('.hamburger_menu_wrapper');
-  const menuBar = document.querySelectorAll('.bar')
-  const menuItems = document.querySelector('.menu_items')
+document.addEventListener("DOMContentLoaded", () => {
+  const hamMenu = document.querySelector(".hamburger_menu_wrapper");
+  const menuBar = document.querySelectorAll(".bar");
+  const menuItems = document.querySelector(".menu_items");
 
-  hamMenu.addEventListener('click', () => {
-    menuItems.classList.toggle('show_menu')
-    menuBar.forEach(bar => {
-      bar.classList.toggle('change');
-    })
-  })
-})
+  hamMenu.addEventListener("click", () => {
+    menuItems.classList.toggle("show_menu");
+    menuBar.forEach((bar) => {
+      bar.classList.toggle("change");
+    });
+  });
+});
 
 // gallery modal
 document.addEventListener("DOMContentLoaded", function () {
@@ -157,41 +163,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // gallery show image and video
 document.addEventListener("DOMContentLoaded", function () {
-  const clickImage = document.querySelector('.click_image')
-  const clickVideo = document.querySelector('.click_video')
-  const showImage = document.querySelector('.show_image')
-  const showVideo = document.querySelector('.show_video')
+  const clickImage = document.querySelector(".click_image");
+  const clickVideo = document.querySelector(".click_video");
+  const showImage = document.querySelector(".show_image");
+  const showVideo = document.querySelector(".show_video");
 
   clickImage.addEventListener("click", function () {
-    showVideo.classList.remove('hide')
-    showImage.classList.add('hide')
-    clickImage.classList.add('active_btn')
-    clickVideo.classList.remove('active_btn')
-  })
+    showVideo.classList.remove("hide");
+    showImage.classList.add("hide");
+    clickImage.classList.add("active_btn");
+    clickVideo.classList.remove("active_btn");
+  });
   clickVideo.addEventListener("click", function () {
-    showVideo.classList.add('hide')
-    showImage.classList.remove('hide')
-    clickImage.classList.remove('active_btn')
-    clickVideo.classList.add('active_btn')
-  })
+    showVideo.classList.add("hide");
+    showImage.classList.remove("hide");
+    clickImage.classList.remove("active_btn");
+    clickVideo.classList.add("active_btn");
+  });
 });
 
 // close and open gallery videos
 document.addEventListener("DOMContentLoaded", function () {
-  const playVideo = document.querySelectorAll('.play')
-  const ModalVideo = document.querySelector('.modals_video')
-  const videoClose = document.querySelector('.video_close')
+  const playVideo = document.querySelectorAll(".play");
+  const ModalVideo = document.querySelector(".modals_video");
+  const videoClose = document.querySelector(".video_close");
 
-
-  playVideo.forEach(playVideos => {
+  playVideo.forEach((playVideos) => {
     playVideos.addEventListener("click", () => {
-      ModalVideo.classList.add('visible_video')
-    })
-  })
+      ModalVideo.classList.add("visible_video");
+    });
+  });
   videoClose.addEventListener("click", () => {
-    ModalVideo.classList.remove('visible_video')
-  })
+    ModalVideo.classList.remove("visible_video");
+  });
 });

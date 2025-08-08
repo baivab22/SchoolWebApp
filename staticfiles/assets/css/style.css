@@ -1,0 +1,5 @@
+/* style.css */
+* {
+  border: 1px solid red !important;
+  box-sizing: border-box;
+}

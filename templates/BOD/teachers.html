@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events Detial - Bhim Secondary School{% endblock %}
+
+{% block content %}
+
+<style>
+    .social {
+        text-align: center; /* Centers the links horizontally within the container */
+    }
+
+    .social a {
+        display: inline-block;
+        margin: 0 10px; /* Adds spacing between links */
+        text-decoration: none; /* Removes underline from links */
+        color: inherit; /* Keeps the color of the text/icons as is */
+    }
+
+    .social a:hover {
+        color: #007bff; /* Change color on hover */
+    }
+
+    .social i {
+        font-size: 1.5rem; /* Adjusts the size of the icons */
+    }
+</style>
+
+<!-- hero -->
+<section class="hero">
+    <div class="head_title">
+        <div class="line"></div>
+        <h3 class="fs-40-w-700">Teachers</h3>
+        <div class="line"></div>
+    </div>
+</section>
+
+<!-- BOD Member -->
+<section class="bod_member_page">
+    <div class="container">
+        <div class="bod_member_page_wrapper">
+            {%for item in teachers%}
+            <a href=" {%if bod_member%}/bod_details/{{item.pk}}{%endif%}">
+                <div class="alumi_box">
+                    <div class="image">
+                        <img src={{item.get_image}} alt="">
+                        <div class="student_detail">
+                            <div class="student_detail_box">
+                                <h4 class="fs-16-w-700">{{item.name}}</h4>
+                                <span class="fs-14-w-400">{{item.title}}</span>
+                            </div>
+                            <div class="social">
+                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-brands fa-instagram"></i>
+                                <i class="fa-brands fa-square-x-twitter"></i>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {%endfor%}
+
+        </div>
+    </div>
+</section>
+
+
+{% include 'common/enquiry.html' %}
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Django Debug with bhim_env",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver",
+                "127.0.0.1:8000"
+            ],
+            "django": true,
+            "python": "F:/apps/anaconda navigator/envs/bhim_env/python.exe",  // Path to bhim_env Python executable
+            "console": "integratedTerminal",  // Make sure it's using the terminal
+            "env": {
+                "DJANGO_SETTINGS_MODULE": "BhimmaviEduPortal.settings"  // Ensure it uses the correct settings
+            },
+            "justMyCode": true  // Optional: Set to false if you want to step into Django core code
+        }
+    ]
+}

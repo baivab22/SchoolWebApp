@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events - Bhim Secondary School{% endblock %}
+
+{% block content %}
+<!-- hero -->
+<section class="hero">
+    <div class="head_title">
+        <div class="line"></div>
+        <h3 class="fs-40-w-700" style="color:white;">Student Alumni Details</h3>
+        <div class="line"></div>
+    </div>
+</section>
+<!-- //portfolio -->
+<section class="student_alumni_page">
+    <div class="container">
+        <div class="student_alumni_page_wrapper">
+            <div class="student_alumni_page_image">
+                <div class="image">
+                    <img src={{alumni.image.url}} alt="">
+                </div>
+
+            </div>
+            <div class="student_alumni_page_detail">
+                <h2 class="fs-36-w-700">{{alumni.name}}</h2>
+                <p class="fs-16-w-600">{{alumni.detail}}</p>
+                <div class="student_alumni_page_detail_wrapper">
+                    <div class="student_alumni_page_detail_item">
+                        <h3 class="fs-24-w-500">
+                            SLC Year:
+                        </h3>
+                        <h4 class="fs-24-w-500">{{alumni.slc_batch}}</h4>
+                    </div>
+                    <div class="student_alumni_page_detail_item">
+                        <h3 class="fs-24-w-500">
+                            Current Address:
+                        </h3>
+                        <h4 class="fs-24-w-500">{{alumni.current_address}}</h4>
+                    </div>
+                    <div class="student_alumni_page_detail_item">
+                        <h3 class="fs-24-w-500">
+                            Current Position:
+                        </h3>
+                        <h4 class="fs-24-w-500">{{alumni.current_position}}</h4>
+                    </div>
+                </div>
+                <div class="social_links">
+                    {%if alumni.facebook_link%}
+                    <a href={{alumni.facebook_link}}>
+                        <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                    </a>
+                    {%endif%}
+                    {%if alumni.twitter_link%}
+                    <a href={{alumni.twitter_link}}>
+                        <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+                    </a>
+                    {%endif%}
+                    {% if alumni.email %}
+                    <a href="mailto:{{ alumni.email }}">
+                        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>   
+                    </a>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- enquiry -->
+{% include 'common/enquiry.html' %}
+
+
+{% endblock %}

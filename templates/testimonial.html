@@ -1,0 +1,90 @@
+<!-- testimonial -->
+{% load static %}
+
+{% load custom_filter %}
+<section class="testimonial">
+    <div class="container">
+        <div class="testimonial_wrapper">
+            <div class="head_text">
+                <div class="head_title">
+                    <div class="line"></div>
+                    <h3 class="fs-24-w-400">Testimonials</h3>
+                    <div class="line"></div>
+                </div>
+                <h2 class="fs-36-w-800 light_blue_text_color"><span class="dark_blue_text_color">What Our</span>
+                    Community <span class="dark_blue_text_color">Says About the</span> School
+                </h2>
+            </div>
+            <div class="client_border">
+                <div class="swiper testimonial_swiper2">
+                    <div class="swiper-wrapper">
+                        {%for item in testimonials%}
+
+                        <div class="swiper-slide">
+
+                            <div class="client_testimonials">
+                                <div class="client_image">
+                                    <div class="image">
+                                        <img src={{item.image.url}} alt="">
+                                        <div class="quotes_image">
+                                            <div class="image">
+                                                <img src="{% static 'assets/image/quote_image.png'%}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_testi">
+                        
+                                    <div class="stars">
+                                    {% for _ in item.rating|make_range %}
+                                        <img src="{% static 'assets/image/star_image.png' %}" alt="">
+                                    {% endfor %}
+                                
+                                    </div>
+                                    <div class="client_opinion">
+                                        <p class="fs-16-w-400">{{item.content}}
+                                        </p>
+                                    </div>
+                                    <div class="client_detail">
+                                        <h3 class="fs-24-w-500">{{item.name}}</h3>
+                                        <span class="fs-16-w-500">{{item.role}}</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        {%endfor%}
+
+                    </div>
+                </div>
+                <div class="arrow_wrapper">
+                    <div class="arrow_shape">
+                        <div thumbsSlider="" class="swiper testimonial_swiper1">
+                            <div class="swiper-wrapper">
+                                {%for item in testimonials%}
+                                <div class="swiper-slide thumb_size">
+                                    <img src={{item.image.url}} alt="">
+                                </div>
+                                {%endfor%}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow_position">
+                    <div class="arrow-testi-prev">
+                        <div class="image">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </div>
+                    </div>
+                    <div class="arrow-testi-next">
+                        <div class="image">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

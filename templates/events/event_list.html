@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Events - Bhim
+Secondary School{% endblock %} {% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="head_title">
+    <div class="line"></div>
+    <h3 class="fs-40-w-700" style="color: white">Events</h3>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- Events & Notice Section -->
+<section class="events_notice">
+  <div class="container">
+    <div class="events_notice_wrapper width-100">
+      <div class="events_wrapper width-100">
+        <div class="event_all">
+          <div class="event_all_wrapper">
+            <div class="event_multi flex-items width-100">
+              <!-- Dummy Event 1 -->
+              {%for item in event%}
+              <div class="event_multi_wrapper width_calc_4">
+                <div class="image">
+                  <img src="{{item.image.url}}" alt="" />
+                  <div class="date">
+                    <p class="fs-16-w-600">{{item.event_date|date:"M j"}}</p>
+                  </div>
+                </div>
+                <div class="event_details">
+                  <a href="/event/{{item.pk}}">
+                    <h4 class="fs-14-w-600">{{item.title}}</h4>
+                  </a>
+                  <div class="event_time_date">
+                    <span class="fs-12-w-600"
+                      ><i class="fa-solid fa-clock me-3"></i
+                      >{{item.event_time}}</span
+                    >
+                    <span class="fs-12-w-600"
+                      ><i class="fa-solid fa-location-dot me-3"></i
+                      >{{item.address}}</span
+                    >
+                  </div>
+                </div>
+              </div>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enquiry Section -->
+{% include 'common/enquiry.html' %} {% endblock %}

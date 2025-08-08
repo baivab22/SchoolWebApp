@@ -1,0 +1,161 @@
+{% load static %}
+<style>
+  @media (max-width: 768px) {
+    .navigation_section {
+      overflow: hidden;
+    }
+  }
+</style>
+<section class="navigation_section">
+  <div class="nav-top">
+    <div class="container">
+      <div class="nav_top_detail">
+        <div class="social_sites">
+          <a href="#" class="fs-16-w-400 dark_blue_text_color"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" class="fs-16-w-400 dark_blue_text_color"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a href="#" class="fs-16-w-400 dark_blue_text_color"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+        <div class="contact_detail">
+          <div class="email">
+            <a class="fs-16-w-400 dark_blue_text_color"
+              ><i class="fa-solid fa-envelope"></i> email07@gmail.com</a
+            >
+          </div>
+          <div class="email">
+            <a class="fs-16-w-400 dark_blue_text_color"
+              ><i class="fa-solid fa-phone"></i> (065)-520127 &nbsp;
+              (065)-520044</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav_bar">
+    <div class="container">
+      <div class="nav">
+        <a href="/home">
+          <div class="school_logo">
+            <div class="img">
+              <img src="{% static 'assets/image/logo1.png' %}" alt="" />
+            </div>
+            <div class="logo_name">
+              <h2 class="fs-14-w-600">
+                Bhim <br />
+                SECONDARY SCHOOL
+              </h2>
+            </div>
+          </div>
+        </a>
+
+        <div class="nav_menu">
+          <div class="menu_items">
+            <ul role="list" class="items_nav">
+              <a href="/home" class="items_list">
+                <li>Home</li>
+              </a>
+              <li class="items_list">
+                <p style="margin-bottom: 0">
+                  About Us <i class="fa-solid fa-chevron-down"></i>
+                </p>
+                <ul role="list" class="sub_items_nav">
+                  <a href="/introduction">
+                    <li>Introduction</li>
+                  </a>
+                  <a href="/history">
+                    <li>History</li>
+                  </a>
+                  <a href="/bod_members">
+                    <li>BOD MEMBERS</li>
+                  </a>
+                  <a href="/teachers">
+                    <li>TEACHERS</li>
+                  </a>
+                </ul>
+              </li>
+              <a href="/alumni" class="items_list">
+                <li>Students Alumni</li>
+              </a>
+
+              <li class="items_list">
+                <p style="margin-bottom: 0">
+                  Features <i class="fa-solid fa-chevron-down"></i>
+                </p>
+                <ul role="list" class="sub_items_nav">
+                  <a href="services">
+                    <li>HOSTEL</li>
+                  </a>
+                  <a href="services">
+                    <li>TRANSPORTATION</li>
+                  </a>
+                  <a href="services">
+                    <li>SCIENCE LAB</li>
+                  </a>
+                  <a href="services">
+                    <li>LIBRARY</li>
+                  </a>
+                </ul>
+              </li>
+
+              <a href="/event" class="items_list">
+                <li>News & Events</li>
+              </a>
+              <a href="/admission" class="items_list">
+                <li>Admission</li>
+              </a>
+              <a href="/contact" class="items_list">
+                <li>Contact</li>
+              </a>
+            </ul>
+          </div>
+          <div class="bal_patrika">
+            <a class="btns bal-patrika" href="#"
+              ><img src="{%static 'assets/image/balpatrika.png'%}" alt="" /> बाल
+              पत्रिका</a
+            >
+          </div>
+          <div
+            class="hamburger_menu"
+            onclick="
+  const menu = document.getElementsByClassName('menu_items')[0];
+
+
+    const menuOverflow = document.getElementsByClassName('navigation_section');
+         console.log('Mobile view detected'.mobileOverflow);
+
+ 
+
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) {
+
+  
+    const isVisible = menu.style.opacity === '1';
+    menu.style.opacity = isVisible ? '0' : '1';
+    menu.style.position = isVisible ? 'relative' : 'fixed';
+    menu.style.pointerEvents = isVisible ? 'none' : 'auto';
+    menu.style.background = 'white';
+    menu.style.zIndex = '200000';
+  
+    menu.style.right = isVisible ? '0px' : '200px';
+   
+    menu.style.display = isVisible ? 'none' : 'flex'; 
+  }
+"
+          >
+            <div class="hamburger_menu_wrapper">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

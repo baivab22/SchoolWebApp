@@ -1,0 +1,86 @@
+{% load static %}
+
+<!-- gallery -->
+<section class="gallery_index">
+  <div class="container">
+    <div class="gallery_index_wrapper">
+      <div class="head_text">
+        <div class="head_title">
+          <div class="line"></div>
+          <h3 class="fs-24-w-400">Gallery</h3>
+          <div class="line"></div>
+        </div>
+        <h2 class="fs-36-w-800 light_blue_text_color">
+          <span class="dark_blue_text_color">Latest</span> Photos And Videos
+          <span class="dark_blue_text_color">Of our Activities</span>
+        </h2>
+      </div>
+      <div class="gallery_items">
+        <div class="gallery_items_wrapper">
+          {%for item in gallery_image|slice:':1'%}
+          <div class="image">
+            <img src="{{item.thumbnail}}" alt="" />
+            <a href="/gallery/{{item.category}}/Photos">
+              <div class="image_description">
+                <p class="fs-24-w-600">{{item.category}}</p>
+                <span class="fs-16-w-500"
+                  ><i class="fa-solid fa-image me-3"></i
+                  >{{item.image_count}}</span
+                >
+              </div>
+            </a>
+          </div>
+          {%endfor%} {%for item in gallery_video|slice:':1'%}
+          <div class="video">
+            <img src="{{item.thumbnail}}" alt="" />
+            <a href="/gallery/{{item.category}}/Videos">
+              <div class="video_description">
+                <p class="fs-24-w-600">{{item.category}}</p>
+                <span class="fs-16-w-500"
+                  ><i class="fa-solid fa-video me-3"></i
+                  >{{item.video_count}}</span
+                >
+              </div>
+            </a>
+          </div>
+          {%endfor%}
+        </div>
+
+        <div class="gallery_items_wrapper">
+          {%for item in gallery_image|slice:'1:'%}
+          <div class="image">
+            <img src="{{item.thumbnail}}" alt="" />
+            <a href="/gallery/{{item.category}}/Photos">
+              <div class="image_description">
+                <p class="fs-24-w-600">{{item.category}}</p>
+                <span class="fs-16-w-500"
+                  ><i class="fa-solid fa-image me-3"></i
+                  >{{item.image_count}}</span
+                >
+              </div>
+            </a>
+          </div>
+          {%endfor%} {%for item in gallery_video|slice:'1:'%}
+          <div class="video">
+            <img src="{{item.thumbnail}}" alt="" />
+            <a href="/gallery/{{item.category}}/Videos">
+              <div class="video_description">
+                <p class="fs-24-w-600">{{item.category}}</p>
+                <span class="fs-16-w-500"
+                  ><i class="fa-solid fa-video me-3"></i
+                  >{{item.video_count}}</span
+                >
+              </div>
+            </a>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+      <div class="gallery_btn">
+        <a href="gallery/" class="btns secondary_blue_btn"
+          >View All <i class="fa-solid fa-arrow-right ms-2"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</section>

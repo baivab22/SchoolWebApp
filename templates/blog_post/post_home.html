@@ -1,0 +1,67 @@
+{% load static %}
+
+<!--news-event-->
+<section class="news_articles_index">
+    <div class="container">
+        <div class="head_text">
+            <div class="head_title">
+                <div class="line"></div>
+                <h3 class="fs-24-w-400">News & Articles</h3>
+                <div class="line"></div>
+            </div>
+            <h2 class="fs-36-w-800 light_blue_text_color"><span class="dark_blue_text_color">Latest</span> News &
+                Articles <span class="dark_blue_text_color">from the</span> Blog
+                <span class="dark_blue_text_color"> Posts</span>
+            </h2>
+        </div>
+        <div class="news_wrapper">
+            <div class="news_article_single">
+                {%for item in blog_post|slice:':1'%}
+                <div class="news_article">
+                    <div class="image">
+                        <img src="{{item.image.url}}" alt="">
+                        <div class="news_details">
+                            <div class="news_title">
+                                <a href="news-and-event-single-page.php">
+                                    <h4 class="fs-24-w-600">{{item.title}}</h4>
+                                </a>
+                            </div>
+                            <div class="author">
+                                <h5 class="fs-16-w-600"><i class="fa-solid fa-user me-2"></i>{{item.written_by}}</h5>
+                                <h5 class="fs-16-w-600"><i class="fa-solid fa-calendar me-2"></i>{{item.date|date:"F j, Y"}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+
+            </div>
+
+            <div class="news_article_multiple">
+                {%for item in blog_post|slice:'1:'%}
+
+                <div class="news_article">
+                    <div class="image">
+                        <img src="{{item.image.url}}" alt="">
+                        <div class="news_details">
+                            <div class="news_title">
+                                <a href="/blogpost/{{item.pk}}">
+                                    <h4 class="fs-14-w-600">{{item.title}}</h4>
+                                </a>
+                            </div>
+                            <div class="author">
+                                <h5 class="fs-12-w-600"><i class="fa-solid fa-user me-2"></i> {{item.written_by}}</h5>
+                                <h5 class="fs-12-w-600"><i class="fa-solid fa-calendar me-2"></i> {{item.date|date:"F j, Y"}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+
+            </div>
+        </div>
+        <div class="news_btns text-center">
+            <a href="/blogpost" class="btns secondary_blue_btn">View All <i class="fa-solid fa-arrow-right ms-2"></i></a>
+        </div>
+    </div>
+</section>

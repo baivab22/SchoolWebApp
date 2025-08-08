@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Events Detial -
+Bhim Secondary School{% endblock %} {% block content %}
+<!-- hero -->
+<section class="hero">
+  <div class="head_title">
+    <div class="line"></div>
+    <h3 class="fs-40-w-700" style="color: white">Gallery</h3>
+
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- gallery -->
+<section class="gallery">
+  <div class="container">
+    <div class="gallery_wrapper">
+      <div class="gallery_btns">
+        <a class="btns active_btn click_image">Photos</a>
+        <a class="btns click_video">Videos</a>
+      </div>
+      <div class="gallery_image show_image hide">
+        {% for item in gallery_image %}
+
+        <a href="gallery_page_single.php">
+          <div class="gallery_image_wrapper">
+            <div class="image">
+              <img src="{{item.thumbnail}}" alt="" />
+            </div>
+            <div class="gallery_details">
+              <p class="fs-16-w-400">{{item.image_count}} image</p>
+              <p class="fs-22-w-600">{{item.category}}</p>
+            </div>
+          </div>
+        </a>
+        {%endfor%}
+      </div>
+      <div class="gallery_image show_video">
+        {% for item in gallery_video %}
+
+        <a href="gallery_single_video_page.php">
+          <div class="gallery_image_wrapper">
+            <div class="image">
+              <img src="{{item.thumbnail}}" alt="" />
+            </div>
+            <div class="gallery_details">
+              <p class="fs-16-w-400">{{item.video_count}} video</p>
+              <p class="fs-22-w-600">{{item.category}}</p>
+            </div>
+          </div>
+        </a>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- enquiry -->
+{% include 'common/enquiry.html' %} {% endblock %}

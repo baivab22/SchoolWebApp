@@ -1,0 +1,141 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Events Detial -
+Bhim Secondary School{% endblock %} {% block content %}
+
+<!-- hero -->
+<section class="hero">
+  <div class="head_title">
+    <div class="line"></div>
+    <h3 class="fs-40-w-700" style="color: white">Contact Details</h3>
+    <div class="line"></div>
+  </div>
+</section>
+
+{% if messages %}
+<div class="messages">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- contact Details -->
+<section class="contact_details">
+  <div class="container">
+    <div class="contact_details_wrapper">
+      <div class="contact_details">
+        <div class="contact_items" style="">
+          <div
+            class="title"
+            style="
+              background: white;
+              box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+                rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            "
+          >
+            <p class="fs-20-w-400 dark_blue_text_color">melugn-4 dolakha</p>
+          </div>
+          <div class="logo">
+            <i class="fa-solid fa-location-dot" style="background: #282828"></i>
+          </div>
+        </div>
+        <div class="contact_items">
+          <div
+            class="title"
+            style="
+              background: white;
+              box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+                rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            "
+          >
+            <p class="fs-20-w-400 dark_blue_text_color">
+              01-5522704, 9749871882
+            </p>
+            <p class="fs-20-w-400 dark_blue_text_color">
+              (SMS, Viber, WhatsApp)
+            </p>
+          </div>
+          <div class="logo">
+            <i class="fa-solid fa-phone-volume" style="background: #282828"></i>
+          </div>
+        </div>
+        <div class="contact_items">
+          <div
+            class="title"
+            style="
+              background: white;
+              box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+                rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            "
+          >
+            <p class="fs-20-w-400 dark_blue_text_color">
+              school.abc@gmail.com,
+            </p>
+            <p class="fs-20-w-400 dark_blue_text_color">info@abc.edu.np</p>
+          </div>
+          <div class="logo">
+            <i class="fa-solid fa-envelope" style="background: #282828"></i>
+          </div>
+        </div>
+      </div>
+      <div class="form_map">
+        <div class="form">
+          <form action="/contact/" method="POST">
+            {%csrf_token%}
+            <div class="row">
+              <div class="col-md-6">
+                <label for="">Full Name *</label>
+                <input type="text" name="name" />
+              </div>
+              <div class="col-md-6">
+                <label for="">Email *</label>
+                <input type="text" name="email" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label for="">Phone *</label>
+                <input type="text" name="phone" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label for="">Subject *</label>
+                <input type="text" name="subject" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label for="">Message *</label>
+                <textarea
+                  id="message"
+                  cols="10"
+                  rows="5"
+                  name="message"
+                ></textarea>
+              </div>
+            </div>
+            <div class="contact_btn mt-4">
+              <button class="btns primary_blue_btn" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d56523.27872658965!2d85.35736320000001!3d27.695513600000012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1706778521823!5m2!1sen!2snp"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- enquiry -->
+{% include 'common/enquiry.html' %} {% endblock %}

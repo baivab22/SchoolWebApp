@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events Detial - Bhim Secondary School{% endblock %}
+
+{% block content %}
+<!-- hero -->
+<section class="hero">
+    <div class="head_title">
+        <div class="line"></div>
+        <h3 class="fs-40-w-700">Events Details</h3>
+        <div class="line"></div>
+    </div>
+</section>
+
+<!-- news-and-article-page -->
+<section class="news-and-article-page">
+    <div class="container">
+        <div class="news-and-article-page-wrapper">
+            <div class="news-and-article-page-left-text">
+                <div class="news-and-article-page-left-text-wrapper">
+
+                    <div class="news_article_single">
+                        <div class="news_article">
+                            <div class="image">
+                                <img src={{event.image.url}} alt="">
+                            </div>
+                            <div class="news_details">
+
+                                <div class="author">
+                                    <h5 class="fs-16-w-600"><i class="fa-solid fa-clock me-3"></i>{{event.event_time}}</h5>
+                                    <h5 class="fs-16-w-600"><i class="fa-solid fa-location-dot me-3"></i>{{event.address}}</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <h3 class="fs-24-w-600">
+                           {{event.title}}
+                        </h3>
+                        <p class="fs-16-w-400">
+                            {{event.description|slice:':400'}}
+                        </p>
+                        {%if event.description|slice:'400:'%}
+                        <p class="fs-16-w-400">
+                            {{event.description|slice:'400:'}}
+                        </p>
+                        {%endif%}
+                        {%if event.description|slice:'800:'%}
+                        <p class="fs-16-w-400">
+                            {{event.description|slice:'800:'}}
+                        </p>
+                        {%endif%}
+                    </div>
+                    <div class="share-on">
+                        <h2 class="fs-16-w-500">Share On:</h2>
+                        <div class="icon">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-square-x-twitter"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="news-and-article-page-right-list">
+                <div class="news-and-article-page-right-list-wrapper">
+
+                    <div class="recent-post-card">
+                        <div class="list-header">
+                            <h3 class="fs-22-w-600 dark_blue_text_color">
+                                Recent Posts
+                                </h2>
+                        </div>
+                        <div class="recent-post-list">
+                            {%for item in recent_post%}
+                            <div class="recent-post-list-wrapper">
+                                <div class="image">
+                                    <img src={{item.image.url}} alt="">
+                                </div>
+                                <div class="post-detail">
+                                    <div class="date">
+                                        <h5 class="fs-12-w-400"><i class="fa-solid fa-calendar"></i>{{item.date|date:"M j"}}</h5>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="news-and-event-single-page">
+
+                                            <p class="fs-14-w-600">
+                                                {{item.title}}
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- enquiry -->
+{% include 'common/enquiry.html' %}
+
+
+
+{% endblock %}

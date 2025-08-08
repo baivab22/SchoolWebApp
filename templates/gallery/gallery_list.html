@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events Detail - Bhim Secondary School{% endblock %}
+
+{% block content %}
+<!-- hero -->
+<section class="hero">
+  <div class="head_title">
+    <div class="line"></div>
+    <h3 class="fs-40-w-700" style="color:white;">Gallery</h3>
+    <div class="line"></div>
+  </div>
+</section>
+
+<section class="gallery_page_single">
+  <div class="container">
+    <div class="gallery-image-wrapper gallery-card">
+      <div class="gallery-images">
+        <div class="row">
+
+          <!-- Column 1 -->
+          <div class="column">
+            {% for item in gallery_list %}
+              {% if forloop.counter|divisibleby:"2" %}
+                <div class="image-wrapper large">
+              {% else %}
+                <div class="image-wrapper small">
+              {% endif %}
+                  {% if item.image %}
+                    <img src="{{ item.image.url }}" class="image" alt="Gallery Image">
+                  {% else %}
+                    <img src="{% static 'assets/image/test.jpg' %}" class="image" alt="Default Image">
+                  {% endif %}
+                  <div class="middle">
+                    <button class="text">View</button>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+
+          <!-- Column 2 -->
+          <div class="column">
+            {% for item in gallery_list %}
+              {% if forloop.counter|divisibleby:"2" %}
+                <div class="image-wrapper small">
+              {% else %}
+                <div class="image-wrapper large">
+              {% endif %}
+                  {% if item.image %}
+                    <img src="{{ item.image.url }}" class="image" alt="Gallery Image">
+                  {% else %}
+                    <img src="{% static 'assets/image/test.jpg' %}" class="image" alt="Default Image">
+                  {% endif %}
+                  <div class="middle">
+                    <button class="text">View</button>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+
+          <!-- Column 3 -->
+          <div class="column">
+            {% for item in gallery_list %}
+              {% if forloop.counter|divisibleby:"2" %}
+                <div class="image-wrapper large">
+              {% else %}
+                <div class="image-wrapper small">
+              {% endif %}
+                  {% if item.image %}
+                    <img src="{{ item.image.url }}" class="image" alt="Gallery Image">
+                  {% else %}
+                    <img src="{% static 'assets/image/test.jpg' %}" class="image" alt="Default Image">
+                  {% endif %}
+                  <div class="middle">
+                    <button class="text">View</button>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+
+          <!-- Column 4 -->
+          <div class="column">
+            {% for item in gallery_list %}
+              {% if forloop.counter|divisibleby:"2" %}
+                <div class="image-wrapper small">
+              {% else %}
+                <div class="image-wrapper large">
+              {% endif %}
+                  {% if item.image %}
+                    <img src="{{ item.image.url }}" class="image" alt="Gallery Image">
+                  {% else %}
+                    <img src="{% static 'assets/image/test.jpg' %}" class="image" alt="Default Image">
+                  {% endif %}
+                  <div class="middle">
+                    <button class="text">View</button>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- enquiry -->
+{% include 'common/enquiry.html' %}
+{% endblock %}

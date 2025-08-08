@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events Detial - Bhim Secondary School{% endblock %}
+<style>
+  /* Custom style for messages */
+.alert {
+    font-size: 18px;  /* Increased font size */
+}
+
+.alert-success {  /* For success messages */
+    background-color: #28a745;  /* Green background */
+    color: white;  /* Text color */
+}
+</style>
+
+{% block content %}
+
+{% if message %}
+    <div class="messages">
+        <div class="alert alert-success" id="alertMessage">
+            {{ message }}
+        </div>
+    </div>
+
+    <!-- Ensure jQuery is loaded -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Fade out the alert after 3 seconds (3000 ms)
+            setTimeout(function() {
+                $('#alertMessage').fadeOut('slow');
+            }, 5000);
+        });
+    </script>
+{% endif %}
+
+
+
+<!-- header-slider -->
+<section class="header-slider">
+    <div class="container">
+        <div class="header_wrapper">
+            <div class="slider_one">
+                <div class="header_text">
+                    <h2 class="fs-40-w-700 light_white_text_color">The Smarter Way to
+                        Learn <span class="dark_blue_text_color">Anything</span></h2>
+                </div>
+                <div class="admission-btn">
+                    <a href="admission_form.php" class="btns primary_white_btn">Admission Open <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="slider_two">
+                <div class="swiper mySwiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <img src="{%static 'assets/image/banner_image1.png'%}" />
+                                <div class="bg_color"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <img src="{%static 'assets/image/banner_image1.png'%}" />
+                                <div class="bg_color"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <img src="{%static 'assets/image/banner_image1.png'%}" />
+                                <div class="bg_color"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="{%static 'assets/image/banner_image1.png'%}" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{%static 'assets/image/banner_image2.png'%}" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{%static 'assets/image/banner_image2.png'%}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider_num">
+        <div class="arrow_position">
+            <div class="arrow-prev">
+                <div class="image">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </div>
+            <div class="arrow-next">
+                <div class="image">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- facility-service -->
+<section class="facility_service">
+    <div class="container">
+        <div class="facility_wrapper">
+            <div class="facility_items">
+                <div class="facility_title">
+                    <h4 class="fs-16-w-600">Hostel Facilities</h4>
+                    <div class="facility_subtitle">
+                        <p class="fs-14-w-400">Lorem ipsum dolor sit amet consectetur. Cras elit tellus in et phasellus
+                            varius diam id
+                            morbi. Cras elit tellus in et </p>
+                        <div class="read_more">
+                            <a href="services.php" class="fs-14-w-600">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="facility_image">
+                    <img src="assets/image/hostel_image.jpg" alt="">
+                </div>
+            </div>
+            <div class="facility_items">
+                <div class="facility_title">
+                    <h4 class="fs-16-w-600">Transportation</h4>
+                    <div class="facility_subtitle">
+                        <p class="fs-14-w-400">Lorem ipsum dolor sit amet consectetur. Cras elit tellus in et phasellus
+                            varius diam id
+                            morbi. Cras elit tellus in et </p>
+                        <div class="read_more">
+                            <a href="services.php" class="fs-14-w-600">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="facility_image">
+                    <img src="assets/image/transportation_image.jpg" alt="">
+                </div>
+            </div>
+            <div class="facility_items">
+                <div class="facility_title">
+                    <h4 class="fs-16-w-600">science Lab</h4>
+                    <div class="facility_subtitle">
+                        <p class="fs-14-w-400">Lorem ipsum dolor sit amet consectetur. Cras elit tellus in et phasellus
+                            varius diam id
+                            morbi. Cras elit tellus in et </p>
+                        <div class="read_more">
+                            <a href="services.php" class="fs-14-w-600">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="facility_image">
+                    <img src="assets/image/science_lab_image.jpg" alt="">
+                </div>
+            </div>
+            <div class="facility_items">
+                <div class="facility_title">
+                    <h4 class="fs-16-w-600">Library</h4>
+                    <div class="facility_subtitle">
+                        <p class="fs-14-w-400">Lorem ipsum dolor sit amet consectetur. Cras elit tellus in et phasellus
+                            varius diam id
+                            morbi. Cras elit tellus in et </p>
+                        <div class="read_more">
+                            <a href="services.php" class="fs-14-w-600">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="facility_image">
+                    <img src="assets/image/library_image.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- about-us -->
+<section class="about_us_index">
+    <div class="container">
+        <div class="about_us_index_wrapper">
+            <div class="school_img">
+                <div class="image">
+                    {%if introduction.introduction_home_image1%}
+                    <img src={{introduction.introduction_home_image1.url}} alt="">
+                    {%else%}
+                    <img src="{%static 'assets/image/school_building.png'%}" alt="">
+                    {%endif%}
+                    <div class="small_logo">
+                        <img src="{%static 'assets/image/small_logo.png'%}" alt="">
+                    </div>
+                    <div class="student_image_wrapper">
+                        <div class="student_image">
+                            {%if introduction.introduction_home_image2%}
+                            <img src={{introduction.introduction_home_image2.url}} alt="">
+                            {%else%}
+                            <img src="{%static 'assets/image/student_image.png'%}" alt="">
+                            {%endif%}
+                        </div>
+                        <div class="experience">
+                            <h3 class="fs-36-w-800 light_white_text_color">{{introduction.years_of_experience}}</h3>
+                            <h4 class="fs-17-w-700 light_white_text_color">Years Of Experience</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about_us_index_detail">
+                <div class="title_head_text">
+                    <div class="head_title">
+                        <div class="line"></div>
+                        <h3 class="fs-24-w-400">About Us</h3>
+                        <div class="line"></div>
+                    </div>
+                    <h2 class="fs-36-w-800 light_blue_text_color"><span class="dark_blue_text_color">The</span>
+                        Brand Academy School
+                        <span class="dark_blue_text_color">Of Learning</span>
+                    </h2>
+                    <p class="fs-16-w-400">{{introduction.introduction_text|truncatechars:600 }}</p>
+                    <div class="read_more">
+                        <a href="/introduction" class="btns primary_blue_btn">Read
+                            More<i class="fa-solid fa-arrow-right ms-2"></i></a>
+                    </div>
+                    <div class="list_items">
+                        <div class="text_items">
+                            <h3 class="fs-36-w-700">{{introduction.student_each_year}}</h3>
+                            <h4 class="fs-16-w-600">Students
+                                Each Year</h4>
+                        </div>
+                        <div class="text_items">
+                            <h3 class="fs-36-w-700">{{introduction.no_of_teacher}}</h3>
+                            <h4 class="fs-16-w-600">Professional
+                                Teacher</h4>
+                        </div>
+                        <div class="text_items">
+                            <h3 class="fs-36-w-700">{{introduction.no_of_awards}}</h3>
+                            <h4 class="fs-16-w-600">Awards
+                                Wining</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- apply-session -->
+<section class="apply_session">
+    <div class="container">
+        <div class="apply_session_wrapper">
+            <div class="session_details">
+                <div class="session_cloud_wrap">
+                    <h3 class="fs-24-w-700 dark_blue_text_color">JOIN OUR NEW SESSION</h3>
+                    <p class="fs-16-w-400 dark_blue_text_color">Lorem ipsum dolor sit amet consectetur. Sed et quis neque
+                        vulputate cras.
+                        Sagittis et sed nullam sed
+                        vulputate urna fermentum. vulputate urna vulputate
+                        vulputate urna fermentum. Sagittis varius lectus ac tortor purus malesuada dolor dapibus. Aliquam
+                        nunc.</p>
+                    <div class="apply_session_btn">
+                        <a href="/admission" class="btns secondary_blue_btn">Apply Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="session_image">
+                <div class="image">
+                    <img src="{%static 'assets/image/children_image.png'%}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- director-message -->
+<section class="message">
+    <div class="container">
+        <div class="message_wrapper">
+            {% for teachers in teachers %}
+            {% if teachers.title|lower == "chairperson" or teachers.title|lower == "chairman" %}
+
+            <div class="image">
+                <img src={{teachers.get_image}} alt="">
+                <div class="text_message">
+                    <h2 class="fs-36-w-700">Message From Director</h2>
+                    <p class="fs-16-w-400">{{teachers.message}}</p>
+                    <div class="designation">
+                        <h4 class="fs-24-w-500">
+                            {{teachers.name}}
+                        </h4>
+                        <h5 class="fs-16-500">{{teachers.title}}</h5>
+                    </div>
+                </div>
+            </div>
+            {%endif%}
+            {%endfor%}
+
+        </div>
+    </div>
+</section>
+
+    <!-- gallery -->
+    {% include 'gallery/gallery_home.html' %}
+
+    <!-- testimonial -->
+    {% include 'testimonial.html' %}
+
+    <!--news-event-->
+    <!-- blog post -->
+    {% include 'blog_post/post_home.html' %}
+
+  <!--events & notice-->
+  {% include 'events/event_home.html' with notice=notice event=event %}
+
+  <!-- student alumni -->
+  {% include 'student_alumni/student_alumni_home.html' %}
+
+    <!-- enquiry -->
+    {% include 'common/enquiry.html' %}
+
+{%endblock%}

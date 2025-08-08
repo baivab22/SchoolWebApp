@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events Detial - Bhim Secondary School{% endblock %}
+
+{% block content %}
+
+
+<!-- hero -->
+<section class="hero">
+    <div class="head_title">
+        <div class="line"></div>
+        <h3 class="fs-40-w-700">BOD Details</h3>
+        <div class="line"></div>
+    </div>
+</section>
+<!-- //portfolio -->
+<section class="portfolio">
+    <div class="container">
+        <div class="portfolio_wrapper">
+            <div class="portfolio_image">
+                <div class="image">
+                    <img src={{bod_details.get_image}} alt="">
+                </div>
+
+            </div>
+            <div class="portfolio_detail">
+                <h3 class="fs-24-w-500">{{bod_details.title}}</h3>
+                <h2 class="fs-36-w-700">{{bod_details.name}}</h2>
+                <p class="fs-16-w-600">{{bod_details.short_intro}}</p>
+                <div class="portfolio_detail_wrapper">
+                    <div class="portfolio_details_grid">
+                        <div class="portfolio_detail_item">
+                            <h3 class="fs-24-w-500 left">
+                                Email:
+                            </h3>
+
+                            <h3 class="fs-24-w-500 right"> {{bod_details.email}}</h3>
+                        </div>
+                        {% if bod_details.website %}
+                        <div class="portfolio_detail_item">
+                            <h3 class="fs-24-w-500 left">
+                                Website:
+                            </h3>
+                            <h3 class="fs-24-w-500 right">{{bod_details.website}}</h3>
+                        </div>
+                        {% endif %}
+
+                        <div class="portfolio_detail_item">
+                            <h3 class="fs-24-w-500 left">
+                                Experience:
+                            </h3>
+                            <h3 class="fs-24-w-500 right">{{bod_details.experience}}</h3>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="social_links">
+                    <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="icon"><i class="fa-brands fa-x-twitter"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about-me -->
+<section class="about_me">
+    <div class="container">
+        <div class="about_me_wrapper">
+            <h2 class="fs-36-w-700">About Me</h2>
+            <p class="fs-16-w-400">{{bod_details.details}}
+            </p>
+
+        </div>
+    </div>
+</section>
+
+{% include 'common/enquiry.html' %}
+
+{% endblock %}

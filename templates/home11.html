@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events Detial - Bhim Secondary School{% endblock %}
+<style>
+  /* Custom style for messages */
+.alert {
+    font-size: 18px;  /* Increased font size */
+}
+
+.alert-success {  /* For success messages */
+    background-color: #28a745;  /* Green background */
+    color: white;  /* Text color */
+}
+
+  /* Style for the school image */
+  .school-image {
+      text-align: center;  /* Center the image */
+      margin: 20px 0;  /* Add spacing around the image */
+  }
+
+  .school-image img {
+      width: 100%;  /* Make the image responsive */
+      max-width: 1200px;  /* Restrict the max width */
+      height: auto;  /* Maintain aspect ratio */
+      border-radius: 10px;  /* Add rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  }
+
+</style>
+{% block content %}
+
+{% if message %}
+    <div class="messages">
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    </div>
+{% endif %}
+
+
+<!-- School Image Section -->
+<div class="school-image">
+  <img src="{% static 'assets/image/school_building.png' %}" alt="Bhim Secondary School">
+</div>
+
+
+  <!--events & notice-->
+    {% include 'events/event_home.html' with notice=notice event=event %}
+
+  <!-- student alumni -->
+    {% include 'student_alumni/student_alumni_home.html' %}
+
+    <!-- gallery -->
+    {% include 'gallery/gallery_home.html' %}
+
+    <!-- blog post -->
+    {% include 'blog_post/post_home.html' %}
+
+    
+    <!-- testimonial -->
+    {% include 'testimonial.html' %}
+
+    <!-- enquiry -->
+    {% include 'common/enquiry.html' %}
+
+
+ 
+{% endblock %}

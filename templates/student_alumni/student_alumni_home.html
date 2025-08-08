@@ -1,0 +1,40 @@
+{% load static %}
+<!-- student alumni -->
+<section class="student_alumni">
+    <div class="container">
+        <div class="head_text">
+            <div class="head_title">
+                <div class="line"></div>
+                <h3 class="fs-24-w-400">Students Alumni</h3>
+                <div class="line"></div>
+            </div>
+            <h2 class="fs-36-w-800 light_blue_text_color"><span class="dark_blue_text_color">Our </span>{{last_batch}}<span class="dark_blue_text_color"> Batch
+                    Students</span> Blog
+
+            </h2>
+        </div>
+        <div class="student_alumni_wrapper">
+            {%for item in student_alumni%}
+            <a href="/alumni/{{item.pk}}">
+
+                <div class="alumi_box">
+                    <div class="image">
+                        <img src={{item.image.url}} alt="">
+                        <div class="student_detail">
+                            <div class="student_detail_box">
+                                <h4 class="fs-16-w-600">{{item.name}}</h4>
+                                <span class="fs-14-w-400">{{item.slc_batch}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </a>
+            {%endfor%}
+
+        </div>
+        <div class="alumni_btn">
+            <a href="/alumni" class="btns secondary_blue_btn">View All <i class="fa-solid fa-arrow-right ms-2"></i></a>
+        </div>
+    </div>
+</section>

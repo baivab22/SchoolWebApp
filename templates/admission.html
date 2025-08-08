@@ -1,0 +1,223 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Events Detial -
+Bhim Secondary School{% endblock %} {% block content %}
+<!-- hero -->
+<section class="hero">
+  <div class="head_title">
+    <div class="line"></div>
+    <h3 class="fs-40-w-700" style="color: white">Admission Form</h3>
+    <div class="line"></div>
+  </div>
+</section>
+
+{% if messages %}
+<div class="messages">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<section class="admission_form">
+  <div class="container">
+    <div class="admission_form_wrapper">
+      <div class="form_heading">
+        <div class="title_text text-center">
+          <h2 class="fs-32-w-600 dark_blue_text_color">
+            Online Admission Form
+          </h2>
+        </div>
+      </div>
+      <form action="{% url 'admission' %}" method="POST">
+        {%csrf_token%}
+        <div class="student_personal_info">
+          <div class="head_text">
+            <h3 class="fs-24-w-600 dark_blue_text_color">
+              Student’s Personal Information
+            </h3>
+          </div>
+          <div class="info_wrapper">
+            <div class="form">
+              <div class="form_info_wrapper">
+                <div class="row">
+                  <div class="col-md-8">
+                    <label for="">Full Name *</label>
+                    <input type="text" name="full_name" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Date of Birth *</label>
+                    <input
+                      type="date"
+                      id="dob"
+                      name="date_of_birth"
+                      class="form-control"
+                      name="date_of_birth"
+                      style="height: 40px; font-size: 14px"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <label for="">Place Of Birth *</label>
+                    <input type="text" name="place_of_birth" />
+                  </div>
+                  <div class="col-md-2">
+                    <div class="row">
+                      <div class="col-12">
+                        <label for="">Gender *</label>
+                      </div>
+                      <div class="col-md-6 d-flex">
+                        <input
+                          type="radio"
+                          id="male"
+                          name="gender"
+                          value="Male"
+                        />
+                        <label for="male">Male</label><br />
+                      </div>
+                      <div class="col-md-6 d-flex">
+                        <input
+                          type="radio"
+                          id="female"
+                          name="gender"
+                          value="Female"
+                        />
+                        <label for="female">Female</label><br />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <label for="">Nationality *</label>
+                    <input type="text" name="nationality" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="">Mother Tongue</label>
+                    <input type="text" name="mother_tongue" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Religion *</label>
+                    <input type="text" name="religion" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Grade Applied For *</label>
+                    <input type="text" name="grade_applied_for" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="">Academic Year *</label>
+                    <input type="text" name="academic_year" />
+                  </div>
+                  <div class="col-md-8">
+                    <label for="">Permanent Address *</label>
+                    <input type="text" name="permanent_address" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="">Current Address *</label>
+                    <input type="text" name="current_address" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="student_personal_info">
+          <div class="head_text">
+            <h3 class="fs-24-w-600 dark_blue_text_color">
+              Last Academic Information *
+            </h3>
+          </div>
+          <div class="info_wrapper">
+            <div class="form">
+              <div class="form_info_wrapper">
+                <textarea
+                  rows="5"
+                  cols="50"
+                  name="last_academic_info"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="student_personal_info">
+          <div class="head_text">
+            <h3 class="fs-24-w-600 dark_blue_text_color">
+              Co-Curricular Activities
+            </h3>
+          </div>
+          <div class="info_wrapper">
+            <div class="form">
+              <div class="form_info_wrapper">
+                <textarea
+                  rows="5"
+                  cols="50"
+                  name="co_curricular_activities"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="student_personal_info">
+          <div class="head_text">
+            <h3 class="fs-24-w-600 dark_blue_text_color">
+              Medical Information
+            </h3>
+          </div>
+          <div class="info_wrapper">
+            <div class="form">
+              <div class="form_info_wrapper">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="">Blood Group</label>
+                    <input type="text" name="blood_group" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Height</label>
+                    <input type="text" name="height" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Weight</label>
+                    <input type="text" name="weight" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="student_personal_info">
+          <div class="head_text">
+            <h3 class="fs-24-w-600 dark_blue_text_color">
+              Applicant’s Contact Details
+            </h3>
+          </div>
+          <div class="info_wrapper">
+            <div class="form">
+              <div class="form_info_wrapper">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="">Contact Number *</label>
+                    <input type="text" name="contact_number" />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="">Email</label>
+                    <input type="text" name="email" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact_btn mt-4">
+          <button class="btns primary_blue_btn" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- enquiry -->
+{% include 'common/enquiry.html' %} {%endblock%}

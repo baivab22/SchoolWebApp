@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}News and Events - Your School Name{% endblock %}
+
+{% block content %}
+<!-- hero -->
+<section class="hero">
+    <div class="head_title">
+        <div class="line"></div>
+        <h3 class="fs-40-w-700">News and Events</h3>
+        <div class="line"></div>
+    </div>
+</section>
+
+<!-- //news-and-com_event -->
+<div class="news-and-event">
+    <div class="container">
+        <div class="news-and-event-wrapper">
+            <div class="news_article_multiple">
+                {%for item in blogpost%}
+                <a href="">
+
+                    <div class="news_article">
+                        <div class="image">
+                            <img src={{item.image.url}} alt="">
+                            <div class="news_details">
+                                <div class="news_title">
+                                    <h4 class="fs-14-w-600">{{item.title}}</h4>
+                                </div>
+                                <div class="author">
+                                    <h5 class="fs-12-w-600"><i class="fa-solid fa-user me-2"></i>{{item.written_by}}</h5>
+                                    <h5 class="fs-12-w-600"><i class="fa-solid fa-calendar me-2"></i>{{item.date}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </a>
+                {%endfor%}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- enquiry -->
+<section class="enquiry">
+    <div class="left_shape"></div>
+    <div class="right_shape"></div>
+    <div class="container">
+        <div class="enquiry_wrapper">
+            <div class="detail_wrapper">
+                <h3 class="fs-32-w-600">Join Our New Session</h3>
+                <h1 class="fs-48-w-700">Apply To Enroll Your Child</h1>
+            </div>
+            <div class="enquiry_btn">
+                <a href="" class="btn_large primary_white_btn">Enquiry <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

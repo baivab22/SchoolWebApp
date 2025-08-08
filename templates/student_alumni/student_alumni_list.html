@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events - Bhim Secondary School{% endblock %}
+
+{% block content %}
+<!-- hero -->
+<section class="hero">
+    <div class="head_title">
+        <div class="line"></div>
+        <h3 class="fs-40-w-700" style="color:white;">Student Alumni</h3>
+
+        <div class="line"></div>
+    </div>
+</section>
+
+<!-- search-bar -->
+<div class="search-bar">
+    <div class="search-bar-wrapper">
+        <label for="search">Batch: </label>
+        <form method="get" action="">
+            <select name="batch" id="batch" onchange="this.form.submit()">
+                <option value="">-- Select Batch --</option>
+                {% for batch in batches %}
+                    <option value="{{ batch }}" {% if batch == selected_batch %}selected{% endif %}>{{ batch }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+</div>
+
+<!-- student alumni -->
+<section class="student_alumni">
+    <div class="container">
+        <div class="student_alumni_wrapper">
+            {% for item in alumni_list %}
+            <a href="/alumni/{{item.pk}}">
+                <div class="alumi_box">
+                    <div class="image">
+                        <img src="{{ item.image.url }}" alt="{{ alumni.name }}" style="width: 200px; height: 200px; object-fit: cover;">
+                        <div class="student_detail">
+                            <div class="student_detail_box">
+                                <h4 class="fs-16-w-600">{{ item.name }}</h4>
+                                <span class="fs-14-w-400">Batch: {{ item.slc_batch }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% empty %}
+            <p>No alumni found for the selected batch.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events Detial - Bhim Secondary School{% endblock %}
+
+{% block content %}
+
+<!-- hero -->
+<section class="hero">
+    <div class="head_title">
+        <div class="line"></div>
+        <h3 class="fs-40-w-700">History</h3>
+        <div class="line"></div>
+    </div>
+</section>
+
+<!-- history -->
+<section class="history">
+    <div class="container">
+        <div class="history_wrapper">
+            {%for item in history%}
+            <div class="date_wrapper {% if forloop.counter|divisibleby:2 or forloop.counter == 0 %}
+            left-container {%else%} right-container {%endif%}">
+
+                <div class="date_title">
+                    <div class="logo">
+                        <p class="fs-16-w-700">{{ item.history_year|date:"Y" }}</p>
+                    </div>
+                </div>
+                <div class="date_text">
+                    <p class="fs-16-w-400">{{item.history_text}}</p>
+                    <div class="timeline">
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+
+        </div>
+    </div>
+</section>
+
+<!-- enquiry -->
+{% include 'common/enquiry.html' %}
+
+{%endblock%}

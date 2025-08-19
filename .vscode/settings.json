@@ -1,6 +1,9 @@
 {
-    "python.defaultInterpreterPath": "F:/apps/anaconda navigator/envs/bhim_env/python.exe",
-    "python.terminal.activateEnvironment": true,  // Ensures the environment is activated in the terminal
-    "python.condaPath": "C:/Users/I44577/AppData/Local/anaconda3/Scripts/conda.exe",  // Path to conda executable
-    "python.envFile": "${workspaceFolder}/.env"  // Optional: specify .env file to load environment variables
+  "python.defaultInterpreterPath": "F:/apps/anaconda navigator/envs/bhim_env/python.exe",
+  "python.terminal.activateEnvironment": true, // Ensures the environment is activated in the terminal
+  "python.condaPath": "C:/Users/I44577/AppData/Local/anaconda3/Scripts/conda.exe", // Path to conda executable
+  "python.envFile": "${workspaceFolder}/.env", // Optional: specify .env file to load environment variables
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "editor.formatOnPaste": false
 }
